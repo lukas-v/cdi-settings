@@ -177,8 +177,8 @@
 						<artifactId>maven-failsafe-plugin</artifactId>
 						<version>${version.plugin.failsafe}</version>
 						<configuration>
-							<forkMode>always</forkMode>
-							<skipTests>false</skipTests>
+							<forkCount>1</forkCount>
+							<reuseForks>false</reuseForks>
 							<systemPropertyVariables>
 								<java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
 								<arquillian.launch>arquillian-wildfly-managed</arquillian.launch>
