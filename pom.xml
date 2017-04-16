@@ -7,7 +7,7 @@
 	
 	<groupId>cz.lukas_v.cdi.settings</groupId>
 	<artifactId>cdi-settings</artifactId>
-	<version>0.9.0.Final</version>
+	<version>0.9.1.SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
 	<licenses>
@@ -28,6 +28,10 @@
 		<url>https://github.com/lukas-v/cdi-settings</url>
 	</scm>
 	
+	<issueManagement>
+		<url>https://github.com/lukas-v/cdi-settings/issues</url>
+	</issueManagement>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -42,6 +46,12 @@
 		
 		<version.arquillian>1.1.13.Final</version.arquillian>
 		<version.arquillian.wildfly-managed>2.0.2.Final</version.arquillian.wildfly-managed>
+		
+		<version.plugin.resources>3.0.2</version.plugin.resources>
+		<version.plugin.compiler>3.6.1</version.plugin.compiler>
+		<version.plugin.jar>3.0.2</version.plugin.jar>
+		<version.plugin.surefire>2.20</version.plugin.surefire>
+		<version.plugin.failsafe>2.20</version.plugin.failsafe>
 	</properties>
 	
 	<dependencyManagement>
@@ -128,19 +138,19 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>${version.plugin.resources}</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>${version.plugin.compiler}</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>${version.plugin.jar}</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.20</version>
+				<version>${version.plugin.surefire}</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -165,7 +175,7 @@
 				<plugins>
 					<plugin>
 						<artifactId>maven-failsafe-plugin</artifactId>
-						<version>2.20</version>
+						<version>${version.plugin.failsafe}</version>
 						<configuration>
 							<forkMode>always</forkMode>
 							<skipTests>false</skipTests>
