@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.lang.annotation.Annotation;
 import java.util.Map;

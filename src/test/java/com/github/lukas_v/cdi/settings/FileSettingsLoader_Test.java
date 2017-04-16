@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.util.Properties;
 
@@ -7,7 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import cz.lukas_v.cdi.settings.FileSettingsLoader;
+import com.github.lukas_v.cdi.settings.FileSettingsLoader;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.core.IsEqual.*;

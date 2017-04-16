@@ -5,7 +5,7 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>cz.lukas_v.cdi.settings</groupId>
+	<groupId>com.github.lukas_v.cdi.settings</groupId>
 	<artifactId>cdi-settings</artifactId>
 	<version>0.9.1.SNAPSHOT</version>
 	<packaging>jar</packaging>

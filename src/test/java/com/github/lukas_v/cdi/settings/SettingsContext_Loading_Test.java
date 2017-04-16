@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.util.Collections;
 
@@ -7,10 +7,9 @@ import javax.enterprise.inject.spi.Bean;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.lukas_v.cdi.settings.FileSettingsLoader;
+import com.github.lukas_v.cdi.settings.SettingsContext;
 import com.typesafe.config.ConfigException;
-
-import cz.lukas_v.cdi.settings.FileSettingsLoader;
-import cz.lukas_v.cdi.settings.SettingsContext;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

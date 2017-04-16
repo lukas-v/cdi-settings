@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

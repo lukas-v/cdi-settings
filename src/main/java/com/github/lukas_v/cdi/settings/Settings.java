@@ -1,7 +1,7 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
-import static cz.lukas_v.cdi.settings.Utils.lookupForBeanManager;
-import static cz.lukas_v.cdi.settings.Utils.verifyBeanDefinition;
+import static com.github.lukas_v.cdi.settings.Utils.lookupForBeanManager;
+import static com.github.lukas_v.cdi.settings.Utils.verifyBeanDefinition;
 
 import java.util.Optional;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.io.File;
 import java.util.Optional;
@@ -23,8 +23,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import cz.lukas_v.cdi.settings.ReloadSettings;
-import cz.lukas_v.cdi.settings.Settings;
+import com.github.lukas_v.cdi.settings.ReloadSettings;
+import com.github.lukas_v.cdi.settings.Settings;
 
 import static org.junit.Assert.*;
 

@@ -1,6 +1,6 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
-import cz.lukas_v.cdi.settings.SettingsScope;
+import com.github.lukas_v.cdi.settings.SettingsScope;
 
 @SettingsScope(namespace="dummy")
 public class DummySettings_FailingCloneable implements Cloneable {

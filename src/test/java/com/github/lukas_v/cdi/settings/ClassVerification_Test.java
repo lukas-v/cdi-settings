@@ -1,4 +1,4 @@
-package cz.lukas_v.cdi.settings;
+package com.github.lukas_v.cdi.settings;
 
 import java.nio.file.AccessMode;
 import java.util.Arrays;
@@ -13,8 +13,8 @@ import org.junit.runners.Suite;
 import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.Suite.SuiteClasses;
 
-import cz.lukas_v.cdi.settings.SettingsScope;
-import cz.lukas_v.cdi.settings.Utils;
+import com.github.lukas_v.cdi.settings.SettingsScope;
+import com.github.lukas_v.cdi.settings.Utils;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.StringStartsWith.startsWith;
