@@ -1,5 +1,11 @@
 {
-	"dummy" : {
-		"value" : "second"
+	"dummy_cloneable" : {
+		"value" : "cloneable : second"
+	}, 
+	"dummy_not_cloneable" : {
+		"value" : "not cloneable : second"
+	}, 
+	"dummy_failing" : {
+		"value" : "failing : second"
 	}
 }

@@ -65,7 +65,7 @@ public class SettingsContext_Loading_Test {
 		
 		assertNotNull(ret);
 		assertEquals(DummySettings_Cloneable.class, ret.getClass());
-		assertEquals("first", ((DummySettings_Cloneable)ret).getValue());
+		assertEquals("cloneable : first", ((DummySettings_Cloneable)ret).getValue());
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ public class SettingsContext_Loading_Test {
 		
 		assertNotNull(ret);
 		assertEquals(DummySettings_Cloneable.class, ret.getClass());
-		assertEquals("second", ((DummySettings_Cloneable)ret).getValue());
+		assertEquals("cloneable : second", ((DummySettings_Cloneable)ret).getValue());
 	}
 	
 	@Test
@@ -130,7 +130,7 @@ public class SettingsContext_Loading_Test {
 		
 		assertNotNull(ret);
 		assertEquals(DummySettings_Cloneable.class, ret.getClass());
-		assertEquals("first", ((DummySettings_Cloneable)ret).getValue());
+		assertEquals("cloneable : first", ((DummySettings_Cloneable)ret).getValue());
 	}
 	
 }

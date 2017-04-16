@@ -2,7 +2,7 @@ package com.github.lukas_v.cdi.settings;
 
 import com.github.lukas_v.cdi.settings.SettingsScope;
 
-@SettingsScope(namespace="dummy")
+@SettingsScope(namespace="dummy_cloneable")
 public class DummySettings_Cloneable implements Cloneable {
 	
 	private String value;

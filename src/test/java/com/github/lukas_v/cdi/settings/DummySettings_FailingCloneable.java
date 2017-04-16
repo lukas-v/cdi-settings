@@ -2,7 +2,7 @@ package com.github.lukas_v.cdi.settings;
 
 import com.github.lukas_v.cdi.settings.SettingsScope;
 
-@SettingsScope(namespace="dummy")
+@SettingsScope(namespace="dummy_failing")
 public class DummySettings_FailingCloneable implements Cloneable {
 	
 	private static interface CloneFailure {

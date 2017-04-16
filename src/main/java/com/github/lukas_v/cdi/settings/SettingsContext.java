@@ -46,7 +46,7 @@ class SettingsContext implements Context {
 	
 	SettingsContext(String settingsPath, Set<Class<?>> beans) {
 		this.settingsPath = Objects.requireNonNull(settingsPath);
-		this.beans = new HashSet<>(beans);
+		this.beans = Objects.requireNonNull(beans);
 	}
 	
 	void initialize() throws Exception {

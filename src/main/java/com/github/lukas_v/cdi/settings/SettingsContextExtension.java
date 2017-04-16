@@ -3,8 +3,11 @@ package com.github.lukas_v.cdi.settings;
 import static com.github.lukas_v.cdi.settings.Utils.*;
 
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.StringJoiner;
+import java.util.TreeMap;
 import java.util.concurrent.ExecutorService;
 
 import javax.enterprise.event.Observes;
@@ -30,7 +33,7 @@ public final class SettingsContextExtension implements Extension {
 	private final Logger logger = LoggerFactory.getLogger(SettingsContextExtension.class);
 	
     private ExecutorService executorService;
-    private Set<Class<?>> discoveredSettings;
+    private Map<String, Class<?>> discoveredSettings;
     
     private final Object lock = new Object();
 	private SettingsContext context;
@@ -43,7 +46,7 @@ public final class SettingsContextExtension implements Extension {
 			logger.warn("Default executor service was not found, reloads are going to be executed directly.");
 		}
 		
-		discoveredSettings = new HashSet<>();
+		discoveredSettings = new TreeMap<>();
 	}
 	
 	/**
@@ -58,8 +61,11 @@ public final class SettingsContextExtension implements Extension {
 		
 		verifyBeanDefinition(annotatedBean);
 		String namespace = verifyScopeNamespace(annotatedBean);
+		if(discoveredSettings.containsKey(namespace)) {
+			throw new IllegalStateException("It is not possible to have two beans with the same namespace.");
+		}
 		
-		discoveredSettings.add(annotatedBean);
+		discoveredSettings.put(namespace, annotatedBean);
 	}
 	
 	/**
@@ -73,8 +79,8 @@ public final class SettingsContextExtension implements Extension {
 		if(!discoveredSettings.isEmpty())
 		{
 			StringJoiner joiner = new StringJoiner("\n\t", "\n[\n\t", "\n]");
-			for(Class<?> discoveredBean : discoveredSettings) {
-				joiner.add(discoveredBean.getName());
+			for(Entry<String, Class<?>> entry : discoveredSettings.entrySet()) {
+				joiner.add(entry.getKey() + " : " + entry.getValue().getName());
 			}
 			
 			logger.info("Following beans with settings have been discovered: {}", joiner);
@@ -83,8 +89,12 @@ public final class SettingsContextExtension implements Extension {
 			logger.warn("No bean with settings has been discovered.");
 		}
 		
-		synchronized(lock) {
-			context = new SettingsContext(discoveredSettings);
+		synchronized(lock)
+		{
+			context = new SettingsContext
+			(
+				new HashSet<>(discoveredSettings.values())
+			);
 		}
 		
 		event.addContext(context);

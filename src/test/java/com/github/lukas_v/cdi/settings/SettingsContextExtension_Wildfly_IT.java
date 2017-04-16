@@ -126,7 +126,7 @@ public class SettingsContextExtension_Wildfly_IT {
 		@Test
 		public void verifyValueOfDirectInjection() {
 			assertNotNull(directInjection);
-			assertEquals("first", directInjection.getValue());
+			assertEquals("cloneable : first", directInjection.getValue());
 		}
 		
 		@Test
@@ -134,7 +134,7 @@ public class SettingsContextExtension_Wildfly_IT {
 			Optional<DummySettings_Cloneable> instance = Settings.snapshotOf(DummySettings_Cloneable.class);
 			
 			assertTrue(instance.isPresent());
-			assertEquals("first", instance.get().getValue());
+			assertEquals("cloneable : first", instance.get().getValue());
 		}
 		
 		
@@ -142,7 +142,7 @@ public class SettingsContextExtension_Wildfly_IT {
 		@Test
 		public void verifyValueOfInjectionFromDependency() {
 			assertNotNull(injectionFromDependency);
-			assertEquals("first", injectionFromDependency.getValue());
+			assertEquals("not cloneable : first", injectionFromDependency.getValue());
 		}
 		
 		@Test
@@ -150,7 +150,7 @@ public class SettingsContextExtension_Wildfly_IT {
 			Optional<DummySettings_NotCloneable> instance = Settings.snapshotOf(DummySettings_NotCloneable.class);
 			
 			assertTrue(instance.isPresent());
-			assertEquals("first", instance.get().getValue());
+			assertEquals("not cloneable : first", instance.get().getValue());
 		}
 		
 		
