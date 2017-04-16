@@ -7,7 +7,7 @@
 	
 	<groupId>com.github.lukas_v.cdi.settings</groupId>
 	<artifactId>cdi-settings</artifactId>
-	<version>0.9.1-Final</version>
+	<version>0.9.1</version>
 	<packaging>jar</packaging>
 	
 	<licenses>
